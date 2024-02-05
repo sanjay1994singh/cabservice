@@ -2,7 +2,10 @@
 __pycache__/
 *.py[cod]
 *$py.class
-
+*.pyc
+*.pyo
+*.db
+.DS_Store
 # C extensions
 *.so
 
@@ -137,7 +140,7 @@ venv.bak/
 
 # mkdocs documentation
 /site
-
+/media/
 # mypy
 .mypy_cache/
 .dmypy.json
