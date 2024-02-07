@@ -273,8 +273,6 @@ Header Area
 Hero Area
 ==============================-->
 <div class="th-hero-wrapper  hero-slider-6">
-
-
     <div class="th-hero-slide" data-bg-src="/static/assets/img/bg/hero_bg_6_1.jpg">
         <div class="hero-img">
             <img src="/static/assets/img/bg/hero_img-6.png" alt="Hero Image">
@@ -337,8 +335,52 @@ Hero Area
 </div>
 <!--======== / Hero Section ========-->
 
-<!--==============================
 
+    <!--==============================
+Taxi Area
+==============================-->
+    <section class="bg-top-center space" id="taxi-sec">
+        <div class="container">
+            <div class="title-area text-center">
+                <span class="sub-title">Our Taxi<span class="double-line"></span></span>
+                <h2 class="sec-title text-capitalize">Choose Our Taxi Collection</h2>
+            </div>
+            <div class="tab-content">
+                <!-- Single item -->
+                <div class="tab-pane fade show active" id="nav-one" role="tabpanel" aria-labelledby="nav-one-tab">
+                    <div class="row gy-5">
+                        {% for cars in cars %}
+                        <div class="col-md-6 col-lg-6 col-xl-4">
+                            <div class="taxi-item style2">
+                                <div class="taxi-item_img">
+                                    <img src="{% if cars.car_img %} {{ cars.car_img.url }} {% endif %}" alt="service image">
+                                </div>
+                                <h3 class="taxi-item_title"><a href="taxi-details.html">{{cars.car_name}}</a></h3>
+                                <p class="taxi-item_subtitle">₹ &nbsp;{{cars.car_rate_with_km}}/km</p>
+                                <div class="taxi-item_feature">
+                                    <span><img src="assets/img/icon/taxi_f_2_1.svg" alt="">Passengers</span>
+                                    <span class="taxi-item_info">{{cars.car_passenger}}</span>
+                                </div>
+                                <div class="taxi-item_feature">
+                                    <span><img src="assets/img/icon/taxi_f_2_3.svg" alt="">Base Rate:</span>
+                                    <span class="taxi-item_info">₹ &nbsp;{{cars.base_rate}}/km</span>
+                                </div>
+
+                                <div class="taxi-item_feature">
+                                    <span><img src="assets/img/icon/taxi_f_2_4.svg" alt="">Air Conditioner:</span>
+                                    <span class="taxi-item_info">{% if cars.air_conditioner %} Yes {% else %} No {% endif %}</span>
+                                </div>
+                                <a href="taxi-details.html" class="th-btn fw-btn">book Now Taxi<i class="fa-regular fa-arrow-right ms-2"></i></a>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!--==============================
 Footer Area
 ==============================-->
 <footer class="footer-wrapper footer-layout3">
