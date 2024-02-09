@@ -62,7 +62,7 @@
  Preloader
 ==============================-->
 <div class="preloader">
-    <button class="th-btn style3 preloaderCls">Cancel Preloader</button>
+<!--    <button class="th-btn style3 preloaderCls">Cancel Preloader</button>-->
     <div class="preloader-inner">
         <div class="loading-window">
             <div class="car">
@@ -399,6 +399,35 @@ Taxi Area
                         </div>
                         <div class="info-item">
                             <h3 class="team-item_title"><a href="team-details.html">{{place.name}}</a></h3>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="bg-smoke space background-image" style="background-image: url(&quot;static/assets/img/bg/testi_bg_1.jpg&quot;);">
+    <div class="container">
+        <div class="title-area text-center">
+            <span class="sub-title">Hotels<span class="double-line"></span></span>
+            <h2 class="sec-title text-capitalize">Best hotels for you</h2>
+        </div>
+        <div class="tab-pane fade show active" id="nav-three" role="tabpanel" aria-labelledby="nav-two-tab">
+            <div class="row gy-5">
+
+                {% for hotel in hotel %}
+                <div class="col-md-6 col-lg-4 col-xl-3">
+                    <div class="team-item">
+                        <div class="team-img">
+                            <img src="{% if hotel.image %}{{hotel.image.url}}{% endif %}" alt="Team">
+                        </div>
+                        <div class="team-item_content">
+                            <h3 class="team-item_title"><a href="team-details.html">{{hotel.name}}</a></h3>
+                        </div>
+                        <div class="info-item">
+                            <h3 class="team-item_title"><a href="team-details.html">{{hotel.name}}</a></h3>
                         </div>
                     </div>
                 </div>
