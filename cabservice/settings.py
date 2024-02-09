@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'services',
     'site_info',
     'tourist_places',
+    'videos',
 ]
 
 MIDDLEWARE = [
