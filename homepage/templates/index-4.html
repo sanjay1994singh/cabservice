@@ -353,7 +353,8 @@ Taxi Area
                     <div class="col-md-6 col-lg-6 col-xl-4">
                         <div class="taxi-item style2">
                             <div class="taxi-item_img">
-                                <img src="{% if cars.car_img %} {{ cars.car_img.url }} {% endif %}" alt="service image" class="img-fluid">
+                                <img src="{% if cars.car_img %} {{ cars.car_img.url }} {% endif %}" alt="service image"
+                                     class="img-fluid">
                             </div>
                             <h3 class="taxi-item_title"><a href="taxi-details.html">{{cars.car_name}}</a></h3>
                             <p class="taxi-item_subtitle">₹ &nbsp;{{cars.car_rate_with_km}}/km</p>
@@ -391,7 +392,7 @@ Taxi Area
                 {% for video in video %}
                 <div class="col-md-6 col-lg-4 col-xl-3">
                     <div class="team-item">
-                        <div class="team-img">
+                        <div class="video-container">
                             {{video.video_link|safe}}
                         </div>
                         <h3 class="team-item_title"><a href="team-details.html">{{video.video_title}}</a></h3>
@@ -405,7 +406,8 @@ Taxi Area
 <!--end video-->
 
 <!--TOURIST PLACE SECTION-->
-<section class="bg-smoke space background-image" style="background-image: url(&quot;static/assets/img/bg/testi_bg_1.jpg&quot;);">
+<section class="bg-smoke space background-image"
+         style="background-image: url(&quot;static/assets/img/bg/testi_bg_1.jpg&quot;);">
     <div class="container">
         <div class="title-area text-center">
             <span class="sub-title">Tourist Places<span class="double-line"></span></span>
@@ -435,7 +437,8 @@ Taxi Area
 </section>
 
 <!--HOTEL SECTION-->
-<section class="bg-smoke space background-image" style="background-image: url(&quot;static/assets/img/bg/testi_bg_1.jpg&quot;);">
+<section class="bg-smoke space background-image"
+         style="background-image: url(&quot;static/assets/img/bg/testi_bg_1.jpg&quot;);">
     <div class="container">
         <div class="title-area text-center">
             <span class="sub-title">Hotels<span class="double-line"></span></span>
@@ -606,6 +609,16 @@ All Js File
 <!-- Main Js File -->
 <script src="/static/assets/js/main.js"></script>
 
+<script>
+    $(document).ready(function() {
+        $(document).on('click', 'iframe', function() {
+            $('iframe').each(function() {
+                $(this).attr('src', $(this).attr('src'));
+            });
+        });
+    });
+
+</script>
 </body>
 
 </html>
