@@ -1,0 +1,109 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!--==============================
+Hero Area
+==============================-->
+<div class="th-hero-wrapper  hero-slider-6">
+    <div class="th-hero-slide" data-bg-src="/static/assets/img/bg/hero_bg_6_1.jpg">
+        <div class="hero-img">
+            <img src="/static/assets/img/bg/hero_img-6.png" alt="Hero Image">
+            <img src="/static/assets/img/bg/hero-shape-1.png" alt="shape" class="shape-1">
+            <img src="/static/assets/img/bg/hero-shape-2.png" alt="shape" class="shape-2">
+            <img src="/static/assets/img/bg/hero-shape-3.png" alt="shape" class="shape-3">
+            <img src="/static/assets/img/bg/hero-shape-1.png" alt="shape" class="shape-4">
+            <img src="/static/assets/img/bg/hero-shape-4.png" alt="shape" class="shape-5">
+            <img src="/static/assets/img/bg/hero-shape-5.png" alt="shape" class="shape-6">
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 ps-3 ps-xl-5">
+                    <form id="booking_detail" class="booking-form3 ajax-contact wow fadeInUp">
+                        {% csrf_token %}
+                        <div class="info-card_content text-center">
+                            <p class="info-card_text">Call for book an order:</p>
+                            <a href="tel:+2563153215" class="info-card_link">8279905967</a>&nbsp;
+                            <a href="tel:+2563153215" class="info-card_link">9917305439</a>&nbsp;
+                            <a href="tel:+2563153215" class="info-card_link">8534874673</a>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-sm-6">
+                                <input type="number" class="form-control" name="mobile" id="mobile"
+                                       placeholder="Mobile Number">
+                            </div>
+                            <div class="form-group col-sm-6">
+                                <input type="text" class="form-control" name="name" id="name"
+                                       placeholder="Enter Your Name">
+                            </div>
+                            <div class="form-group col-sm-12">
+                                <textarea name="address" id="address" class="form-control" cols="30" rows="10"
+                                          placeholder="Enter Address"></textarea>
+                            </div>
+                            <div class="form-group col-sm-6">
+                                <input type="text" class="date-pick form-control" name="date" id="date-pick"
+                                       placeholder="Select Date">
+                            </div>
+                            <div class="form-group col-sm-6">
+                                <input type="text" class="time-pick form-control" name="time" id="time-pick"
+                                       placeholder="Select Time">
+                            </div>
+
+                            <div class="form-group col-12">
+                                <input type="text" class="form-control" name="car_name" id="car_name"
+                                       placeholder="Car Name">
+                            </div>
+                            <div class="form-group col-12">
+                                <input type="text" class="form-control" name="passenger" id="passenger"
+                                       placeholder="No Of Passengers">
+                            </div>
+
+                            <div class="form-btn col-12">
+                                <button class="th-btn" type="submit">Book Your Vehicle</button>
+                            </div>
+                        </div>
+                        <p class="form-messages mb-0 mt-3"></p>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<!--======== / Hero Section ========-->
+
+
+<!-- Footer Area ===================-->
+<footer class="footer-wrapper footer-layout3">
+    <div class="widget-area">
+        <div class="container">
+            <div class="row justify-content-between text-center">
+                <div class="col-md-4 col-xl-auto">
+                    <div class="widget footer-widget">
+                        <h3 class="widget_title">About Us</h3>
+                        <div class="th-widget-about">
+                            <p class="footer-text">Address new vikash nagar govind pur near Radha valley Mathura pin
+                                code 281004</p>
+                            <h4 class="footer-info-title">WE ARE AVAILABLE</h4>
+                            <p class="footer-text">Always</p>
+                            <!--                            <a href="contact.html" class="th-btn style3"><span class="btn-text">Contact Us</span></a>-->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-xl-auto p-2">
+                    <img src="/static/assets/barcodes/barcode1.jpeg" width="300">
+                </div>
+                <div class="col-md-4 col-xl-auto p-2">
+                    <img src="/static/assets/barcodes/barcode1.jpeg" width="300">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="copyright-wrap">
+        <div class="container">
+            <p class="copyright-text">© 2024 <a href="/">Riya Tour And Travels</a>. All Rights
+                Reserved.</p>
+        </div>
+    </div>
+</footer>
+<!--======== / Footer Area ========-->
+{% endblock content %}

@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!--HOTEL SECTION-->
+<section class="bg-smoke space background-image"
+         style="background-image: url(&quot;static/assets/img/bg/testi_bg_1.jpg&quot;);">
+    <div class="container">
+        <div class="title-area text-center">
+            <span class="sub-title">Hotels<span class="double-line"></span></span>
+            <h2 class="sec-title text-capitalize">Best hotels for you</h2>
+        </div>
+        <div class="tab-pane fade show active" id="nav-three" role="tabpanel" aria-labelledby="nav-two-tab">
+            <div class="row gy-5">
+
+                {% for hotel in hotel %}
+                <div class="col-md-6 col-lg-4 col-xl-3">
+                    <div class="team-item">
+                        {% if hotel.image %}
+                        <div class="team-img">
+                            <img src="{{hotel.image.url}}" alt="Team">
+                        </div>
+                        {% endif %}
+                        <div class="team-item_content">
+                            <h3 class="team-item_title">{{hotel.name|title}}</h3>
+                        </div>
+                        <div class="info-item">
+                            <h3 class="team-item_title">{{hotel.name|title}}</h3>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+<!--======== / HOTEL SECTION ========-->
+
+<!-- Footer Area ===================-->
+<footer class="footer-wrapper footer-layout3">
+    <div class="widget-area">
+        <div class="container">
+            <div class="row justify-content-between text-center">
+                <div class="col-md-4 col-xl-auto">
+                    <div class="widget footer-widget">
+                        <h3 class="widget_title">About Us</h3>
+                        <div class="th-widget-about">
+                            <p class="footer-text">Address new vikash nagar govind pur near Radha valley Mathura pin
+                                code 281004</p>
+                            <h4 class="footer-info-title">WE ARE AVAILABLE</h4>
+                            <p class="footer-text">Always</p>
+                            <!--                            <a href="contact.html" class="th-btn style3"><span class="btn-text">Contact Us</span></a>-->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-xl-auto p-2">
+                    <img src="/static/assets/barcodes/barcode1.jpeg" width="300">
+                </div>
+                <div class="col-md-4 col-xl-auto p-2">
+                    <img src="/static/assets/barcodes/barcode1.jpeg" width="300">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="copyright-wrap">
+        <div class="container">
+            <p class="copyright-text">© 2024 <a href="/">Riya Tour And Travels</a>. All Rights
+                Reserved.</p>
+        </div>
+    </div>
+</footer>
+<!--======== / Footer Area ========-->
+<!--********************************
+        Code End  Here
+******************************** -->
+{% endblock content %}

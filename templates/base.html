@@ -109,6 +109,7 @@
 
 
 
+
     </style>
 </head>
 
@@ -165,16 +166,16 @@ Mobile Menu
                     <a href="/">Home</a>
                 </li>
                 <li class="menu-item-has-children">
-                    <a href="#">About Us</a>
+                    <a href="/hotels/">Hotels</a>
                 </li>
                 <li class="menu-item-has-children">
-                    <a href="#">Service</a>
+                    <a href="/tourist_place/">Tourist Place</a>
                 </li>
                 <li class="menu-item-has-children">
-                    <a href="#">Blog</a>
+                    <a href="/videos/">Videos</a>
                 </li>
                 <li>
-                    <a href="contact.html">Contact</a>
+                    <a href="/contact_us/">Contact</a>
                 </li>
             </ul>
         </div>
@@ -309,27 +310,30 @@ Header Area
                     <div class="col-auto">
                         <nav class="main-menu d-none d-lg-block">
                             <ul>
-                                <li class="menu-item-has-children">
-                                    <a href="index.html">Home</a>
+                                <li class="">
+                                    <a href="/">Home</a>
                                 </li>
-                                <li><a href="#about-sec">About Us</a></li>
-                                <li><a href="#service-sec">Services</a></li>
-                                <li><a href="#taxi-sec">Taxi</a></li>
-                                <li><a href="#blog-sec">Blog</a></li>
-                                <li><a href="#contact-sec">Contact Us</a></li>
+                                <li class="">
+                                    <a href="/book_cab/">Book Taxi/Cab</a>
+                                </li>
+                                <li class="">
+                                    <a href="/hotels/">Hotels</a>
+                                </li>
+                                <li class="">
+                                    <a href="/tourist_place/">Tourist Place</a>
+                                </li>
+                                <li class="">
+                                    <a href="/videos/">Videos</a>
+                                </li>
+                                <li>
+                                    <a href="/contact_us/">Contact</a>
+                                </li>
                             </ul>
                         </nav>
                         <button class="th-menu-toggle  d-inline-block d-lg-none"><i class="far fa-bars"></i></button>
                     </div>
                     <div class="col-auto">
                         <div class="header-button">
-                            <div class="langauge">
-                                <select class="form-select nice-select">
-                                    <option selected="">language</option>
-                                    <option>English</option>
-                                    <option>Hindi</option>
-                                </select>
-                            </div>
                             <button type="button" class="icon-btn searchBoxToggler"><i class="far fa-search"></i>
                             </button>
                             <a href="#" class="icon-btn sideMenuToggler"><i class="far fa-bars"></i></a>
@@ -340,246 +344,9 @@ Header Area
         </div>
     </div>
 </header>
-<!--==============================
-Hero Area
-==============================-->
-<div class="th-hero-wrapper  hero-slider-6">
-    <div class="th-hero-slide" data-bg-src="/static/assets/img/bg/hero_bg_6_1.jpg">
-        <div class="hero-img">
-            <img src="/static/assets/img/bg/hero_img-6.png" alt="Hero Image">
-            <img src="/static/assets/img/bg/hero-shape-1.png" alt="shape" class="shape-1">
-            <img src="/static/assets/img/bg/hero-shape-2.png" alt="shape" class="shape-2">
-            <img src="/static/assets/img/bg/hero-shape-3.png" alt="shape" class="shape-3">
-            <img src="/static/assets/img/bg/hero-shape-1.png" alt="shape" class="shape-4">
-            <img src="/static/assets/img/bg/hero-shape-4.png" alt="shape" class="shape-5">
-            <img src="/static/assets/img/bg/hero-shape-5.png" alt="shape" class="shape-6">
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 ps-3 ps-xl-5">
-                    <form id="booking_detail" class="booking-form3 ajax-contact wow fadeInUp">
-                        {% csrf_token %}
-                        <div class="info-card_content text-center">
-                            <p class="info-card_text">Call for book an order:</p>
-                            <a href="tel:+2563153215" class="info-card_link">8279905967</a>&nbsp;
-                            <a href="tel:+2563153215" class="info-card_link">9917305439</a>&nbsp;
-                            <a href="tel:+2563153215" class="info-card_link">8534874673</a>
-                        </div>
-                        <div class="row">
-                            <div class="form-group col-sm-6">
-                                <input type="number" class="form-control" name="mobile" id="mobile"
-                                       placeholder="Mobile Number">
-                            </div>
-                            <div class="form-group col-sm-6">
-                                <input type="text" class="form-control" name="name" id="name"
-                                       placeholder="Enter Your Name">
-                            </div>
-                            <div class="form-group col-sm-12">
-                                <textarea name="address" id="address" class="form-control" cols="30" rows="10"
-                                          placeholder="Enter Address"></textarea>
-                            </div>
-                            <div class="form-group col-sm-6">
-                                <input type="text" class="date-pick form-control" name="date" id="date-pick"
-                                       placeholder="Select Date">
-                            </div>
-                            <div class="form-group col-sm-6">
-                                <input type="text" class="time-pick form-control" name="time" id="time-pick"
-                                       placeholder="Select Time">
-                            </div>
 
-                            <div class="form-group col-12">
-                                <input type="text" class="form-control" name="car_name" id="car_name"
-                                       placeholder="Car Name">
-                            </div>
-                            <div class="form-group col-12">
-                                <input type="text" class="form-control" name="passenger" id="passenger"
-                                       placeholder="No Of Passengers">
-                            </div>
-
-                            <div class="form-btn col-12">
-                                <button class="th-btn" type="submit">Book Your Vehicle</button>
-                            </div>
-                        </div>
-                        <p class="form-messages mb-0 mt-3"></p>
-                    </form>
-                </div>
-
-            </div>
-        </div>
-    </div>
-</div>
-<!--======== / Hero Section ========-->
-
-
-<!--==============================
-Taxi Area
-==============================-->
-<section class="bg-top-center space" id="taxi-sec">
-    <div class="container">
-        <div class="title-area text-center">
-            <span class="sub-title">Our Taxi<span class="double-line"></span></span>
-            <h2 class="sec-title text-capitalize">Choose Our Taxi Collection</h2>
-        </div>
-        <div class="tab-content">
-            <!-- Single item -->
-            <div class="tab-pane fade show active" id="nav-one" role="tabpanel" aria-labelledby="nav-one-tab">
-                <div class="row gy-5">
-                    {% for cars in cars %}
-                    <div class="col-md-6 col-lg-6 col-xl-4">
-                        <div class="taxi-item style2">
-                            <div class="taxi-item_img">
-                                <img src="{% if cars.car_img %} {{ cars.car_img.url }} {% endif %}" alt="service image"
-                                     class="img-fluid">
-                            </div>
-                            <h3 class="taxi-item_title"><a href="taxi-details.html">{{cars.car_name}}</a></h3>
-                            <p class="taxi-item_subtitle">₹ &nbsp;{{cars.car_rate_with_km}}/km</p>
-                            <div class="taxi-item_feature">
-                                <span><img src="assets/img/icon/taxi_f_2_1.svg" alt="">Passengers</span>
-                                <span class="taxi-item_info">{{cars.car_passenger}}</span>
-                            </div>
-                            <div class="taxi-item_feature">
-                                <span><img src="assets/img/icon/taxi_f_2_3.svg" alt="">Base Rate:</span>
-                                <span class="taxi-item_info">₹ &nbsp;{{cars.base_rate}}/km</span>
-                            </div>
-
-                            <div class="taxi-item_feature">
-                                <span><img src="assets/img/icon/taxi_f_2_4.svg" alt="">Air Conditioner:</span>
-                                <span class="taxi-item_info">{% if cars.air_conditioner %} Yes {% else %} No {% endif %}</span>
-                            </div>
-                            <!--                                <a href="taxi-details.html" class="th-btn fw-btn">book Now Taxi<i class="fa-regular fa-arrow-right ms-2"></i></a>-->
-                        </div>
-                    </div>
-                    {% endfor %}
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!--video-->
-<section class="bg-top-center space">
-    <div class="container">
-        <div class="title-area text-center">
-            <span class="sub-title">Videos<span class="double-line"></span></span>
-        </div>
-        <div class="tab-pane fade show active" id="nav-four" role="tabpanel" aria-labelledby="nav-two-tab">
-            <div class="row gy-5">
-                {% for video in video %}
-                <div class="col-md-6 col-lg-4 col-xl-3">
-                    <div class="team-item">
-                        <div class="video-container">
-                            {{video.video_link|safe}}
-                        </div>
-                        <h3 class="team-item_title"><a href="team-details.html">{{video.video_title}}</a></h3>
-                    </div>
-                </div>
-                {% endfor %}
-            </div>
-        </div>
-    </div>
-</section>
-<!--end video-->
-
-<!--TOURIST PLACE SECTION-->
-<section class="bg-smoke space background-image"
-         style="background-image: url(&quot;static/assets/img/bg/testi_bg_1.jpg&quot;);">
-    <div class="container">
-        <div class="title-area text-center">
-            <span class="sub-title">Tourist Places<span class="double-line"></span></span>
-            <h2 class="sec-title text-capitalize">Best Tourist place</h2>
-        </div>
-        <div class="tab-pane fade show active" id="nav-two" role="tabpanel" aria-labelledby="nav-two-tab">
-            <div class="row gy-5">
-                {% for place in place %}
-                <div class="col-md-6 col-lg-4 col-xl-3">
-                    <div class="team-item">
-                        {% if place.image %}
-                        <div class="team-img">
-                            <img src="{{place.image.url}}" alt="Team">
-                        </div>
-                        {% endif %}
-                        <div class="team-item_content">
-                            <h3 class="team-item_title">{{place.name|title}}</h3>
-                        </div>
-                        <div class="info-item">
-                            <h3 class="team-item_title">{{place.name|title}}</h3>
-                        </div>
-                    </div>
-                </div>
-                {% endfor %}
-            </div>
-        </div>
-    </div>
-</section>
-
-<!--HOTEL SECTION-->
-<section class="bg-smoke space background-image"
-         style="background-image: url(&quot;static/assets/img/bg/testi_bg_1.jpg&quot;);">
-    <div class="container">
-        <div class="title-area text-center">
-            <span class="sub-title">Hotels<span class="double-line"></span></span>
-            <h2 class="sec-title text-capitalize">Best hotels for you</h2>
-        </div>
-        <div class="tab-pane fade show active" id="nav-three" role="tabpanel" aria-labelledby="nav-two-tab">
-            <div class="row gy-5">
-
-                {% for hotel in hotel %}
-                <div class="col-md-6 col-lg-4 col-xl-3">
-                    <div class="team-item">
-                        {% if hotel.image %}
-                        <div class="team-img">
-                            <img src="{{hotel.image.url}}" alt="Team">
-                        </div>
-                        {% endif %}
-                        <div class="team-item_content">
-                            <h3 class="team-item_title">{{hotel.name|title}}</h3>
-                        </div>
-                        <div class="info-item">
-                            <h3 class="team-item_title">{{hotel.name|title}}</h3>
-                        </div>
-                    </div>
-                </div>
-                {% endfor %}
-            </div>
-        </div>
-    </div>
-</section>
-<!--==============================
-Footer Area
-==============================-->
-<footer class="footer-wrapper footer-layout3">
-    <div class="widget-area">
-        <div class="container">
-            <div class="row justify-content-between text-center">
-                <div class="col-md-4 col-xl-auto">
-                    <div class="widget footer-widget">
-                        <h3 class="widget_title">About Us</h3>
-                        <div class="th-widget-about">
-                            <p class="footer-text">Address new vikash nagar govind pur near Radha valley Mathura pin code 281004</p>
-                            <h4 class="footer-info-title">WE ARE AVAILABLE</h4>
-                            <p class="footer-text">Always</p>
-<!--                            <a href="contact.html" class="th-btn style3"><span class="btn-text">Contact Us</span></a>-->
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-xl-auto p-2">
-                    <img src="/static/assets/barcodes/barcode1.jpeg" width="300">
-                </div>
-                <div class="col-md-4 col-xl-auto p-2">
-                    <img src="/static/assets/barcodes/barcode1.jpeg" width="300">
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="copyright-wrap">
-        <div class="container">
-            <p class="copyright-text">© 2023 <a href="https://themeforest.net/user/themeholy">Taxiar</a>. All Rights
-                Reserved.</p>
-        </div>
-    </div>
-</footer>
-
-
+{% block content %}
+{% endblock content %}
 <!--********************************
         Code End  Here
 ******************************** -->
@@ -681,6 +448,7 @@ All Js File
           },
         });
     })
+
 </script>
 </body>
 

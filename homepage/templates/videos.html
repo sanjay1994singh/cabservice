@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!--video-->
+<section class="bg-top-center space">
+    <div class="container">
+        <div class="title-area text-center">
+            <span class="sub-title">Videos<span class="double-line"></span></span>
+        </div>
+        <div class="tab-pane fade show active" id="nav-four" role="tabpanel" aria-labelledby="nav-two-tab">
+            <div class="row gy-5">
+                {% for video in video %}
+                <div class="col-md-6 col-lg-4 col-xl-3">
+                    <div class="team-item">
+                        <div class="video-container">
+                            {{video.video_link|safe}}
+                        </div>
+                        <h3 class="team-item_title"><a href="team-details.html">{{video.video_title}}</a></h3>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+<!--********************************
+        Code End  Here
+******************************** -->
+{% endblock content %}

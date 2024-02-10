@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!--TOURIST PLACE SECTION-->
+<section class="bg-smoke space background-image"
+         style="background-image: url(&quot;static/assets/img/bg/testi_bg_1.jpg&quot;);">
+    <div class="container">
+        <div class="title-area text-center">
+            <span class="sub-title">Tourist Places<span class="double-line"></span></span>
+            <h2 class="sec-title text-capitalize">Best Tourist place</h2>
+        </div>
+        <div class="tab-pane fade show active" id="nav-two" role="tabpanel" aria-labelledby="nav-two-tab">
+            <div class="row gy-5">
+                {% for place in place %}
+                <div class="col-md-6 col-lg-4 col-xl-3">
+                    <div class="team-item">
+                        {% if place.image %}
+                        <div class="team-img">
+                            <img src="{{place.image.url}}" alt="Team">
+                        </div>
+                        {% endif %}
+                        <div class="team-item_content">
+                            <h3 class="team-item_title">{{place.name|title}}</h3>
+                        </div>
+                        <div class="info-item">
+                            <h3 class="team-item_title">{{place.name|title}}</h3>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+<!--********************************
+        Code End  Here
+******************************** -->
+{% endblock content %}
