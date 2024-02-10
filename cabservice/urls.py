@@ -4,7 +4,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
-    path('cab-admin-riya/', admin.site.urls),
+    path('admin/', admin.site.urls),
     path('', include('homepage.urls')),
     path('booking_detail/', include('booking_detail.urls')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
