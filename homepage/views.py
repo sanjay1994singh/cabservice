@@ -47,5 +47,4 @@ def videos(request):
     return render(request, 'videos.html', context)
 
 
-def contact_us(request):
-    return render(request, 'contact_us.html')
+

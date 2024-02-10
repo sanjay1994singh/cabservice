@@ -326,7 +326,7 @@ Header Area
                                     <a href="/videos/">Videos</a>
                                 </li>
                                 <li>
-                                    <a href="/contact_us/">Contact</a>
+                                    <a href="/contact_us_query/contact_us/">Contact</a>
                                 </li>
                             </ul>
                         </nav>
@@ -334,8 +334,6 @@ Header Area
                     </div>
                     <div class="col-auto">
                         <div class="header-button">
-                            <button type="button" class="icon-btn searchBoxToggler"><i class="far fa-search"></i>
-                            </button>
                             <a href="#" class="icon-btn sideMenuToggler"><i class="far fa-bars"></i></a>
                         </div>
                     </div>
@@ -395,14 +393,6 @@ All Js File
 <script src="/static/assets/js/main.js"></script>
 <script src="/static/assets/js/sweet-alert.js"></script>
 <script>
-    $(document).ready(function() {
-        $(document).on('click', 'iframe', function() {
-            $('iframe').each(function() {
-                $(this).attr('src', $(this).attr('src'));
-            });
-        });
-    });
-
     $('#booking_detail').on('submit', function(e){
         e.preventDefault();
         var formData = $('#booking_detail').serialize();
@@ -450,6 +440,9 @@ All Js File
     })
 
 </script>
+
+{% block js %}
+{% endblock js %}
 </body>
 
 </html>
