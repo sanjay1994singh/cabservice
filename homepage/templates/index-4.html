@@ -14,6 +14,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <link rel="manifest" href="/static/assets/img/favicons/manifest.json">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.min.css">
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="/static/assets/img/favicons/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
@@ -286,19 +287,26 @@ Hero Area
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 ps-3 ps-xl-5">
-                    <form action="mail.php" method="POST" class="booking-form3 ajax-contact wow fadeInUp">
-                        <div class="info-card_content">
+                    <form id="booking_detail" class="booking-form3 ajax-contact wow fadeInUp">
+                        {% csrf_token %}
+                        <div class="info-card_content text-center">
                             <p class="info-card_text">Call for book an order:</p>
-                            <a href="tel:+2563153215" class="info-card_link">+91 8279905967</a>
+                            <a href="tel:+2563153215" class="info-card_link">8279905967</a>&nbsp;
+                            <a href="tel:+2563153215" class="info-card_link">9917305439</a>&nbsp;
+                            <a href="tel:+2563153215" class="info-card_link">8534874673</a>
                         </div>
                         <div class="row">
                             <div class="form-group col-sm-6">
-                                <input type="number" class="form-control" name="phone" id="phone"
-                                       placeholder="Phone Number">
+                                <input type="number" class="form-control" name="mobile" id="mobile"
+                                       placeholder="Mobile Number">
                             </div>
                             <div class="form-group col-sm-6">
-                                <input type="text" class="form-control" name="location" id="location"
-                                       placeholder="Enter Location">
+                                <input type="text" class="form-control" name="name" id="name"
+                                       placeholder="Enter Your Name">
+                            </div>
+                            <div class="form-group col-sm-12">
+                                <textarea name="address" id="address" class="form-control" cols="30" rows="10"
+                                          placeholder="Enter Address"></textarea>
                             </div>
                             <div class="form-group col-sm-6">
                                 <input type="text" class="date-pick form-control" name="date" id="date-pick"
@@ -308,13 +316,10 @@ Hero Area
                                 <input type="text" class="time-pick form-control" name="time" id="time-pick"
                                        placeholder="Select Time">
                             </div>
+
                             <div class="form-group col-12">
-                                <select class="form-select nice-select" name="vehicle" id="vehicle">
-                                    <option value="Normal" selected disabled>Select Vehicle Class</option>
-                                    <option value="Normal">Normal Car</option>
-                                    <option value="Business">Business Class</option>
-                                    <option value="vip">VIP Service</option>
-                                </select>
+                                <input type="text" class="form-control" name="car_name" id="car_name"
+                                       placeholder="Car Name">
                             </div>
                             <div class="form-group col-12">
                                 <input type="text" class="form-control" name="passenger" id="passenger"
@@ -322,7 +327,7 @@ Hero Area
                             </div>
 
                             <div class="form-btn col-12">
-                                <button class="th-btn">Book Your Vehicle</button>
+                                <button class="th-btn" type="submit">Book Your Vehicle</button>
                             </div>
                         </div>
                         <p class="form-messages mb-0 mt-3"></p>
@@ -608,6 +613,7 @@ All Js File
 <script src="/static/assets/js/wow.min.js"></script>
 <!-- Main Js File -->
 <script src="/static/assets/js/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.min.js"></script>
 
 <script>
     $(document).ready(function() {
@@ -618,6 +624,38 @@ All Js File
         });
     });
 
+    $('#booking_detail').on('submit', function(e){
+        e.preventDefault();
+        var formData = $('#booking_detail').serialize();
+        $.ajax({
+          url: '/booking_detail/submit_detail/',
+          type: 'POST',
+          data: formData,
+          success: function (response) {
+            if(response.status == 1){
+                  Swal.fire({
+                    title: 'Success',
+                    text: 'Booking has been submitted successfully, we will contact you shortly.',
+                    icon: 'success',
+                    showCancelButton: false,
+                    confirmButtonColor: '#3085d6',
+                    confirmButtonText: 'OK'
+                  }).then((result) => {
+                    $('#booking_detail')[0].reset();
+                  });
+            }else{
+                  Swal.fire({
+                      title: 'Error',
+                      text: 'Something went wrong try again later.',
+                      icon: 'error',
+                      confirmButtonColor: '#3085d6',
+                      confirmButtonText: 'OK'
+                  });
+                  return false;
+            }
+          },
+        });
+    })
 </script>
 </body>
 
