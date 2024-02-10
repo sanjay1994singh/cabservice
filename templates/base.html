@@ -526,14 +526,16 @@ Taxi Area
                 {% for hotel in hotel %}
                 <div class="col-md-6 col-lg-4 col-xl-3">
                     <div class="team-item">
+                        {% if hotel.image %}
                         <div class="team-img">
-                            <img src="{% if hotel.image %}{{hotel.image.url}}{% endif %}" alt="Team">
+                            <img src="{{hotel.image.url}}" alt="Team">
                         </div>
+                        {% endif %}
                         <div class="team-item_content">
-                            <h3 class="team-item_title"><a href="team-details.html">{{hotel.name}}</a></h3>
+                            <h3 class="team-item_title">{{hotel.name|title}}</h3>
                         </div>
                         <div class="info-item">
-                            <h3 class="team-item_title"><a href="team-details.html">{{hotel.name}}</a></h3>
+                            <h3 class="team-item_title">{{hotel.name|title}}</h3>
                         </div>
                     </div>
                 </div>
