@@ -9,6 +9,7 @@ class CarsRent(models.Model):
     car_rate_with_km = models.IntegerField(null=True, blank=True)
     car_passenger = models.IntegerField(null=True, blank=True)
     air_conditioner = models.BooleanField(default=True, null=True, blank=True)
+    show_car = models.BooleanField(default=True, null=True, blank=True)
 
     def __str__(self):
         return self.car_name

@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'videos',
     'booking_detail',
     'contact_us_query',
+    'rate_list',
 ]
 
 MIDDLEWARE = [
