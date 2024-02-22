@@ -141,3 +141,11 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 AUTH_USER_MODEL = 'accounts.CustomUser'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+TWILIO_ACCOUNT_SID = 'ACd3644a47374cb31a797c476d6b1100d1'
+TWILIO_AUTH_TOKEN = '8251b04c2636ab32d3b179237c4fb3dc'
+
+YOUR_TWILIO_PHONE_NUMBER = '+15169287184'
+
+# 5MGN3XVWSGU9T123RJY9MTCS
+

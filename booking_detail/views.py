@@ -1,8 +1,24 @@
-from django.http import JsonResponse
+from django.http import JsonResponse, HttpResponse
 from .models import BookingDetail
 from datetime import datetime
 
+from twilio.rest import Client
+from django.conf import settings
+
+
 # Create your views here.
+
+
+def send_sms_notification(mobile, name, booking_date):
+    client = Client(settings.TWILIO_ACCOUNT_SID, settings.TWILIO_AUTH_TOKEN)
+    message = client.messages.create(
+        body=f"New booking details: Name - {name}, Mobile - {mobile}, Date - {booking_date}",
+        from_=settings.YOUR_TWILIO_PHONE_NUMBER,
+        to='+918279905967'
+    )
+    return message.sid
+
+
 def submit_detail(request):
     if request.method == 'POST':
         form = request.POST
@@ -24,6 +40,7 @@ def submit_detail(request):
                                            )
 
         if obj:
+            send_sms_notification(mobile, name, booking_date)
             status = 1
         else:
             status = 0

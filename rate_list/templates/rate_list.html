@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="bg-smoke space background-image"
+         style="background-image: url(&quot;static/assets/img/bg/testi_bg_1.jpg&quot;);">
+    <div class="container">
+        <div class="title-area text-center">
+            <span class="sub-title">Hotels<span class="double-line"></span></span>
+            <h2 class="sec-title text-capitalize">Best hotels for you</h2>
+        </div>
+        <div class="tab-pane fade show active" id="nav-three" role="tabpanel" aria-labelledby="nav-two-tab">
+            <div class="row gy-5 car_detail">
+                <div class="col-lg-2 places">
+                    <h3>Places</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock content %}
+
+
+{% block js %}
+<script>
+    var place = {{ place|safe }}
+    console.log(place, '==============place')
+    $.each(place, function(index, item1){
+        console.log(item1);
+        $('.places').append(item1.place_name)
+        $.each(item1.car_details, function(index, item2){
+            $('.car_detail').append(`<div class="col-lg-2">
+                                        <p>${item2.car_name} ${item2.seat}</p>
+                                        <p>${item2.rent}</p>
+                                    </div>`)
+        });
+
+    });
+
+</script>
+{% endblock js %}
